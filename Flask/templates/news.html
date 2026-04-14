@@ -287,15 +287,193 @@
   margin-right: auto;
 }
 
+/* Prediction Dashboard */
+.prediction-section {
+  padding: 70px 0 40px;
+  background: #fff;
+}
+
+.prediction-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.prediction-section .section-header .badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(139,92,246,0.1);
+  color: #7c3aed;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.prediction-section .section-header h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1B3C53;
+  margin-bottom: 12px;
+}
+
+.prediction-section .section-header p {
+  color: #64748b;
+  font-size: 15px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.decade-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.decade-card {
+  border-radius: 20px;
+  padding: 32px 26px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.decade-card::before {
+  content: '';
+  position: absolute;
+  bottom: -30px; right: -30px;
+  width: 130px; height: 130px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+
+.decade-card::after {
+  content: '';
+  position: absolute;
+  top: -20px; left: -20px;
+  width: 80px; height: 80px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+
+.decade-card.purple { background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); box-shadow: 0 10px 30px rgba(124,58,237,0.35); }
+.decade-card.teal   { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); box-shadow: 0 10px 30px rgba(8,145,178,0.35); }
+.decade-card.indigo { background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); box-shadow: 0 10px 30px rgba(79,70,229,0.35); }
+
+.decade-card .year-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.decade-card h3 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.decade-card .card-subtitle {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 22px;
+}
+
+.decade-card .metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.decade-card .metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 9px 14px;
+}
+
+.decade-card .metric-row .metric-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+}
+
+.decade-card .metric-row .metric-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.prediction-charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.prediction-charts-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.insight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.insight-list li:last-child { border-bottom: none; }
+
+.insight-list li .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.dot.purple { background: #7c3aed; }
+.dot.teal   { background: #0891b2; }
+.dot.indigo { background: #4f46e5; }
+.dot.green  { background: #10b981; }
+.dot.orange { background: #f59e0b; }
+
 @media (max-width: 992px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .charts-grid { grid-template-columns: 1fr; }
+  .decade-cards { grid-template-columns: 1fr; }
+  .prediction-charts-grid { grid-template-columns: 1fr; }
+  .prediction-charts-bottom { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 576px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .stat-item .stat-number { font-size: 36px; }
   .cta-section h2 { font-size: 26px; }
+  .decade-card h3 { font-size: 32px; }
+  .prediction-section .section-header h2 { font-size: 24px; }
 }
 </style>
 </head>
@@ -345,10 +523,10 @@
       </div>
     </div>
 
-    <!-- Latest News Articles -->
+    <!-- Latest News Articles (2 articles) -->
     <div class="dashboard-card">
       <h3><i class="fa fa-newspaper-o"></i> Latest News &amp; Research</h3>
-      
+
       <div class="row">
         <div class="col-md-6">
           <div class="news-article">
@@ -371,76 +549,12 @@
             <div class="news-article-image"></div>
             <div class="news-article-content">
               <div class="news-meta">
-                <span class="news-category">Prevention</span>
-                <span><i class="fa fa-calendar"></i> March 2026</span>
-                <span><i class="fa fa-map-marker"></i> WHO</span>
-              </div>
-              <h4>WHO Launches Global Hepatitis B Vaccination Campaign</h4>
-              <p>World Health Organization initiates comprehensive vaccination program across 45 countries to reduce liver cancer risk. Program targets 50 million people in high-risk regions with focus on prevention.</p>
-              <a href="#" class="read-more">Read Full Article <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="news-article">
-            <div class="news-article-image"></div>
-            <div class="news-article-content">
-              <div class="news-meta">
                 <span class="news-category">Technology</span>
                 <span><i class="fa fa-calendar"></i> February 2026</span>
                 <span><i class="fa fa-map-marker"></i> Japan</span>
               </div>
               <h4>AI Detection System Achieves 95% Accuracy in Early Diagnosis</h4>
               <p>Tokyo Medical University develops artificial intelligence system that detects early-stage liver cancer with 95% accuracy, potentially revolutionizing screening programs worldwide and enabling earlier intervention.</p>
-              <a href="#" class="read-more">Read Full Article <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="news-article">
-            <div class="news-article-image"></div>
-            <div class="news-article-content">
-              <div class="news-meta">
-                <span class="news-category">Treatment</span>
-                <span><i class="fa fa-calendar"></i> February 2026</span>
-                <span><i class="fa fa-map-marker"></i> Germany</span>
-              </div>
-              <h4>Targeted Radiation Therapy Reduces Side Effects by 40%</h4>
-              <p>German researchers present new precision radiation technique that minimizes damage to healthy liver tissue while effectively treating tumors. Clinical trials show significant improvement in patient quality of life.</p>
-              <a href="#" class="read-more">Read Full Article <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="news-article">
-            <div class="news-article-image"></div>
-            <div class="news-article-content">
-              <div class="news-meta">
-                <span class="news-category">Research</span>
-                <span><i class="fa fa-calendar"></i> January 2026</span>
-                <span><i class="fa fa-map-marker"></i> UK</span>
-              </div>
-              <h4>Blood Test Detects Liver Cancer 2 Years Before Symptoms</h4>
-              <p>Cambridge University scientists develop revolutionary blood test capable of detecting liver cancer biomarkers up to two years before clinical symptoms appear, offering hope for earlier diagnosis and treatment.</p>
-              <a href="#" class="read-more">Read Full Article <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="news-article">
-            <div class="news-article-image"></div>
-            <div class="news-article-content">
-              <div class="news-meta">
-                <span class="news-category">Clinical Trial</span>
-                <span><i class="fa fa-calendar"></i> January 2026</span>
-                <span><i class="fa fa-map-marker"></i> China</span>
-              </div>
-              <h4>Combination Therapy Extends Survival by 18 Months</h4>
-              <p>Shanghai Cancer Center reports breakthrough results combining targeted therapy with checkpoint inhibitors, extending median survival time by 18 months in patients with inoperable hepatocellular carcinoma.</p>
               <a href="#" class="read-more">Read Full Article <i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
@@ -457,6 +571,124 @@
       <div class="dashboard-card">
         <h3><i class="fa fa-globe"></i> Clinical Trials by Region</h3>
         <canvas id="trialsChart" height="200"></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Liver Cancer Future Predictions Dashboard -->
+<section class="prediction-section">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="badge-label"><i class="fa fa-line-chart"></i> AI-BASED PROJECTIONS</div>
+      <h2>Liver Cancer Global Outlook: 2030 — 2050</h2>
+      <p>Data-driven predictions based on WHO trends, population growth, and medical advancement trajectories.</p>
+    </div>
+
+    <!-- Decade Summary Cards -->
+    <div class="decade-cards">
+      <div class="decade-card purple">
+        <div class="year-badge">PROJECTION 2030</div>
+        <h3>1.13M</h3>
+        <div class="card-subtitle">Estimated Annual Cases</div>
+        <div class="metrics">
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-heartbeat"></i> 5-Year Survival</span>
+            <span class="metric-value">35%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-times-circle"></i> Est. Deaths/Year</span>
+            <span class="metric-value">~990K</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-robot"></i> AI Diagnosis Adoption</span>
+            <span class="metric-value">55%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-arrow-up"></i> Cases vs 2024</span>
+            <span class="metric-value">+25%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="decade-card teal">
+        <div class="year-badge">PROJECTION 2040</div>
+        <h3>1.45M</h3>
+        <div class="card-subtitle">Estimated Annual Cases</div>
+        <div class="metrics">
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-heartbeat"></i> 5-Year Survival</span>
+            <span class="metric-value">55%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-times-circle"></i> Est. Deaths/Year</span>
+            <span class="metric-value">~1.05M</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-robot"></i> AI Diagnosis Adoption</span>
+            <span class="metric-value">88%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-arrow-up"></i> Cases vs 2024</span>
+            <span class="metric-value">+60%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="decade-card indigo">
+        <div class="year-badge">PROJECTION 2050</div>
+        <h3>1.78M</h3>
+        <div class="card-subtitle">Estimated Annual Cases</div>
+        <div class="metrics">
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-heartbeat"></i> 5-Year Survival</span>
+            <span class="metric-value">72%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-times-circle"></i> Est. Deaths/Year</span>
+            <span class="metric-value">~930K</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-robot"></i> AI Diagnosis Adoption</span>
+            <span class="metric-value">98%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label"><i class="fa fa-arrow-up"></i> Cases vs 2024</span>
+            <span class="metric-value">+97%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Charts Row -->
+    <div class="prediction-charts-grid">
+      <div class="dashboard-card">
+        <h3><i class="fa fa-line-chart"></i> Global Cases &amp; Deaths Trajectory (2024–2050)</h3>
+        <canvas id="trajChart" height="180"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3><i class="fa fa-lightbulb-o"></i> Key Insights</h3>
+        <ul class="insight-list">
+          <li><span class="dot purple"></span>Cases rise due to aging population, NAFLD epidemic, and metabolic disease growth — even as treatment improves.</li>
+          <li><span class="dot teal"></span>By 2040 CAR-T cell therapy and targeted gene editing expected to be mainstream treatments.</li>
+          <li><span class="dot indigo"></span>Deaths plateau then decline after 2040 as AI-powered early detection and mRNA-based vaccines mature.</li>
+          <li><span class="dot green"></span>Asia-Pacific share of cases projected to drop from 70% to 58% by 2050 due to Hepatitis B vaccination scale-up.</li>
+          <li><span class="dot orange"></span>5-year survival rate could reach 72% by 2050 — a 4× improvement over current global averages.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Charts Row -->
+    <div class="prediction-charts-bottom">
+      <div class="dashboard-card">
+        <h3><i class="fa fa-bar-chart"></i> 5-Year Survival Rate Improvement</h3>
+        <canvas id="survivalChart" height="200"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3><i class="fa fa-pie-chart"></i> Regional Case Distribution by 2050</h3>
+        <canvas id="regionChart" height="200"></canvas>
       </div>
     </div>
 
@@ -561,6 +793,134 @@ document.addEventListener('DOMContentLoaded', function() {
           x: { 
             grid: { display: false },
             ticks: { font: { size: 11 } }
+          }
+        }
+      }
+    });
+  }
+
+  // ── Prediction: Trajectory Chart ──────────────────────────────
+  var ctxTraj = document.getElementById('trajChart');
+  if (ctxTraj) {
+    new Chart(ctxTraj.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: ['2024', '2026', '2028', '2030', '2035', '2040', '2045', '2050'],
+        datasets: [
+          {
+            label: 'Annual Cases (thousands)',
+            data: [905, 950, 1020, 1130, 1280, 1450, 1620, 1780],
+            borderColor: '#7c3aed',
+            backgroundColor: 'rgba(124,58,237,0.08)',
+            borderWidth: 3,
+            tension: 0.45,
+            fill: true,
+            pointRadius: 5,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: '#7c3aed',
+            pointBorderWidth: 2
+          },
+          {
+            label: 'Annual Deaths (thousands)',
+            data: [830, 860, 890, 990, 1020, 1050, 990, 930],
+            borderColor: '#ef4444',
+            backgroundColor: 'rgba(239,68,68,0.06)',
+            borderWidth: 3,
+            tension: 0.45,
+            fill: true,
+            pointRadius: 5,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: '#ef4444',
+            pointBorderWidth: 2,
+            borderDash: [6, 3]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'top', labels: { usePointStyle: true, pointStyle: 'circle', padding: 16, font: { size: 12 } } },
+          tooltip: { backgroundColor: 'rgba(27,60,83,0.95)', padding: 12,
+            callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + 'K' }
+          }
+        },
+        scales: {
+          y: { beginAtZero: false, min: 700, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { size: 11 }, callback: v => v + 'K' } },
+          x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
+
+  // ── Prediction: Survival Rate Chart ───────────────────────────
+  var ctxSurv = document.getElementById('survivalChart');
+  if (ctxSurv) {
+    new Chart(ctxSurv.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['2024\n(Current)', '2030', '2040', '2050'],
+        datasets: [{
+          label: '5-Year Survival Rate (%)',
+          data: [18, 35, 55, 72],
+          backgroundColor: [
+            'rgba(100,116,139,0.75)',
+            'rgba(124,58,237,0.8)',
+            'rgba(8,145,178,0.8)',
+            'rgba(79,70,229,0.85)'
+          ],
+          borderRadius: 10,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(27,60,83,0.95)',
+            padding: 12,
+            callbacks: { label: ctx => 'Survival: ' + ctx.parsed.y + '%' }
+          }
+        },
+        scales: {
+          y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%', font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.05)' } },
+          x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
+
+  // ── Prediction: Regional Distribution 2050 ────────────────────
+  var ctxReg = document.getElementById('regionChart');
+  if (ctxReg) {
+    new Chart(ctxReg.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Asia-Pacific', 'Africa', 'Europe', 'North America', 'Latin America', 'Other'],
+        datasets: [{
+          data: [58, 15, 11, 8, 5, 3],
+          backgroundColor: [
+            'rgba(79,70,229,0.85)',
+            'rgba(245,158,11,0.85)',
+            'rgba(8,145,178,0.85)',
+            'rgba(16,185,129,0.85)',
+            'rgba(239,68,68,0.80)',
+            'rgba(100,116,139,0.70)'
+          ],
+          borderWidth: 3,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '62%',
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 14, font: { size: 12 }, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            backgroundColor: 'rgba(27,60,83,0.95)',
+            padding: 12,
+            callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '%' }
           }
         }
       }
