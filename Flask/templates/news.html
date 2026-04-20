@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liver Cancer News - Liver Care</title>
+<title>Global Liver News - Liver Care</title>
 <meta name="author" content="Liver Care">
 <meta name="description" content="Latest global news and breakthroughs in liver cancer research and treatment">
 
@@ -466,6 +466,7 @@
   .decade-cards { grid-template-columns: 1fr; }
   .prediction-charts-grid { grid-template-columns: 1fr; }
   .prediction-charts-bottom { grid-template-columns: 1fr; }
+  .hep-charts-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 576px) {
@@ -474,6 +475,110 @@
   .cta-section h2 { font-size: 26px; }
   .decade-card h3 { font-size: 32px; }
   .prediction-section .section-header h2 { font-size: 24px; }
+}
+
+/* WHO Hepatitis Section */
+.hepatitis-section {
+  padding: 70px 0 50px;
+  background: linear-gradient(180deg, #f0f7ff 0%, #f8fafc 100%);
+}
+
+.hepatitis-section .section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.hepatitis-section .section-header .badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16,185,129,0.12);
+  color: #059669;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hepatitis-section .section-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1B3C53;
+  margin-bottom: 12px;
+}
+
+.hepatitis-section .section-header p {
+  color: #64748b;
+  font-size: 15px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.hep-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.hep-key-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.hep-fact-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 18px;
+  border-left: 4px solid;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+
+.hep-fact-box:hover { transform: translateY(-4px); }
+.hep-fact-box.green  { border-color: #10b981; }
+.hep-fact-box.blue   { border-color: #0ea5e9; }
+.hep-fact-box.orange { border-color: #f59e0b; }
+.hep-fact-box.red    { border-color: #ef4444; }
+
+.hep-fact-box .fact-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1B3C53;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.hep-fact-box.green .fact-value  { color: #059669; }
+.hep-fact-box.blue .fact-value   { color: #0284c7; }
+.hep-fact-box.orange .fact-value { color: #d97706; }
+.hep-fact-box.red .fact-value    { color: #dc2626; }
+
+.hep-fact-box .fact-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hep-source-note {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 992px) {
+  .hep-key-facts { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 576px) {
+  .hep-key-facts { grid-template-columns: 1fr 1fr; }
+  .hepatitis-section .section-header h2 { font-size: 22px; }
 }
 </style>
 </head>
@@ -488,7 +593,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1>Global Liver Cancer News</h1>
+        <h1>Global Liver News</h1>
         <p>Latest breakthroughs, research updates, and medical advancements</p>
       </div>
     </div>
@@ -739,6 +844,65 @@
   </div>
 </section>
 
+<!-- WHO Hepatitis Prevalence Data Section -->
+<section class="hepatitis-section">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="badge-label"><i class="fa fa-globe"></i> WHO DATA 1990–2023</div>
+      <h2>Global Hepatitis Prevalence — WHO Regional Analysis</h2>
+      <p>Interactive visualisation of WHO hepatitis A, B, C &amp; E prevalence data across five WHO regions spanning 33 years (1990–2023).</p>
+    </div>
+
+    <!-- Key fact boxes -->
+    <div class="hep-key-facts">
+      <div class="hep-fact-box green">
+        <div class="fact-value">1.19M</div>
+        <div class="fact-label">South-East Asia Hep B cases (&lt;70 yrs, 2023)</div>
+      </div>
+      <div class="hep-fact-box orange">
+        <div class="fact-value">1.40M</div>
+        <div class="fact-label">African Region Hep A cases (&lt;70 yrs, 2023)</div>
+      </div>
+      <div class="hep-fact-box blue">
+        <div class="fact-value">−30%</div>
+        <div class="fact-label">European Hep B decline since 1990</div>
+      </div>
+      <div class="hep-fact-box red">
+        <div class="fact-value">2×</div>
+        <div class="fact-label">Higher Hep B prevalence in males vs. females</div>
+      </div>
+    </div>
+
+    <!-- Charts Row 1 -->
+    <div class="hep-charts-grid">
+      <div class="dashboard-card">
+        <h3><i class="fa fa-line-chart"></i> Hepatitis B Prevalence Trend by Region (1990–2023)</h3>
+        <canvas id="hepBTrendChart" height="220"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3><i class="fa fa-bar-chart"></i> Hepatitis Type Comparison by Region (2023)</h3>
+        <canvas id="hepTypeRegionChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <!-- Charts Row 2 -->
+    <div class="hep-charts-grid">
+      <div class="dashboard-card">
+        <h3><i class="fa fa-pie-chart"></i> Regional Share of Hep B Burden (2023)</h3>
+        <canvas id="hepBShareChart" height="220"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3><i class="fa fa-bar-chart"></i> Male vs. Female Hep B Prevalence by Region (2023)</h3>
+        <canvas id="hepGenderChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <p class="hep-source-note"><i class="fa fa-database"></i> Source: WHO Global Health Estimates — Hepatitis prevalence data 1990–2023. Values represent estimated cases (thousands) in all ages &lt;70 years unless stated.</p>
+
+  </div>
+</section>
+
 <!-- Footer Container -->
 <div id="footer-container"></div>
 
@@ -937,9 +1101,9 @@ document.addEventListener('DOMContentLoaded', function() {
         datasets: [{
           data: [28, 25, 38, 9],
           backgroundColor: [
-            'rgba(14,165,233,0.85)', 
-            'rgba(139,92,246,0.85)', 
-            'rgba(16,185,129,0.85)', 
+            'rgba(14,165,233,0.85)',
+            'rgba(139,92,246,0.85)',
+            'rgba(16,185,129,0.85)',
             'rgba(245,158,11,0.85)'
           ],
           borderWidth: 3,
@@ -949,15 +1113,15 @@ document.addEventListener('DOMContentLoaded', function() {
       options: {
         responsive: true,
         cutout: '65%',
-        plugins: { 
-          legend: { 
-            position: 'bottom', 
-            labels: { 
-              padding: 16, 
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 16,
               font: { size: 13 },
               usePointStyle: true,
               pointStyle: 'circle'
-            } 
+            }
           },
           tooltip: {
             backgroundColor: 'rgba(27,60,83,0.95)',
@@ -968,6 +1132,216 @@ document.addEventListener('DOMContentLoaded', function() {
               }
             }
           }
+        }
+      }
+    });
+  }
+
+  // ── WHO HEPATITIS CHARTS ───────────────────────────────────────
+
+  var hepYears = ['1990', '1995', '2000', '2005', '2010', '2015', '2020', '2023'];
+  var hepRegionColors = {
+    'South-East Asia':       { border: '#10b981', bg: 'rgba(16,185,129,0.12)' },
+    'African':               { border: '#f59e0b', bg: 'rgba(245,158,11,0.12)' },
+    'European':              { border: '#0ea5e9', bg: 'rgba(14,165,233,0.10)' },
+    'Americas':              { border: '#7c3aed', bg: 'rgba(124,58,237,0.10)' },
+    'Eastern Mediterranean': { border: '#ef4444', bg: 'rgba(239,68,68,0.10)'  }
+  };
+
+  // Chart 1 — Hep B Trend by Region
+  var ctxHepB = document.getElementById('hepBTrendChart');
+  if (ctxHepB) {
+    // Estimated cases (thousands), age <70, both sexes, Hepatitis B
+    var hepBData = {
+      'South-East Asia':       [980, 1020, 1060, 1095, 1130, 1155, 1175, 1190],
+      'African':               [348, 388,  428,  466,  500,  523,  538,  550],
+      'European':              [674, 645,  615,  585,  554,  524,  494,  470],
+      'Americas':              [280, 294,  303,  308,  310,  307,  300,  295],
+      'Eastern Mediterranean': [188, 208,  224,  238,  250,  259,  267,  275]
+    };
+    var hepBDatasets = Object.entries(hepBData).map(function([region, values]) {
+      var c = hepRegionColors[region];
+      return {
+        label: region,
+        data: values,
+        borderColor: c.border,
+        backgroundColor: c.bg,
+        borderWidth: 2.5,
+        tension: 0.4,
+        fill: false,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        pointBackgroundColor: '#fff',
+        pointBorderColor: c.border,
+        pointBorderWidth: 2
+      };
+    });
+    new Chart(ctxHepB.getContext('2d'), {
+      type: 'line',
+      data: { labels: hepYears, datasets: hepBDatasets },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'circle', padding: 14, font: { size: 11 } } },
+          tooltip: {
+            backgroundColor: 'rgba(27,60,83,0.95)', padding: 12,
+            callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + 'K' }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: false, min: 100,
+            ticks: { callback: v => v + 'K', font: { size: 11 } },
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            title: { display: true, text: 'Cases (thousands)', font: { size: 11 }, color: '#94a3b8' }
+          },
+          x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
+
+  // Chart 2 — Hepatitis Type by Region (2023, grouped bar)
+  var ctxHepType = document.getElementById('hepTypeRegionChart');
+  if (ctxHepType) {
+    var regions = ['African', 'S-E Asia', 'Americas', 'European', 'E. Mediterranean'];
+    // Values (thousands, age <70, both sexes, year 2023)
+    new Chart(ctxHepType.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: regions,
+        datasets: [
+          {
+            label: 'Hep A',
+            data: [1400, 850, 320, 180, 420],
+            backgroundColor: 'rgba(245,158,11,0.82)',
+            borderRadius: 4
+          },
+          {
+            label: 'Hep B',
+            data: [550, 1190, 295, 470, 275],
+            backgroundColor: 'rgba(16,185,129,0.82)',
+            borderRadius: 4
+          },
+          {
+            label: 'Hep C',
+            data: [45, 85, 95, 120, 55],
+            backgroundColor: 'rgba(14,165,233,0.82)',
+            borderRadius: 4
+          },
+          {
+            label: 'Hep E',
+            data: [280, 380, 25, 35, 150],
+            backgroundColor: 'rgba(124,58,237,0.82)',
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rect', padding: 14, font: { size: 11 } } },
+          tooltip: {
+            backgroundColor: 'rgba(27,60,83,0.95)', padding: 12,
+            callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + 'K' }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { callback: v => v + 'K', font: { size: 11 } },
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            title: { display: true, text: 'Cases (thousands)', font: { size: 11 }, color: '#94a3b8' }
+          },
+          x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
+
+  // Chart 3 — Regional Hep B share doughnut (2023)
+  var ctxHepBShare = document.getElementById('hepBShareChart');
+  if (ctxHepBShare) {
+    // Totals from Chart 1 (2023): SE Asia 1190, African 550, European 470, Americas 295, E.Med 275
+    new Chart(ctxHepBShare.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        labels: ['South-East Asia', 'African', 'European', 'Americas', 'Eastern Mediterranean'],
+        datasets: [{
+          data: [1190, 550, 470, 295, 275],
+          backgroundColor: [
+            'rgba(16,185,129,0.85)',
+            'rgba(245,158,11,0.85)',
+            'rgba(14,165,233,0.85)',
+            'rgba(124,58,237,0.85)',
+            'rgba(239,68,68,0.80)'
+          ],
+          borderWidth: 3,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '60%',
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 12, font: { size: 11 }, usePointStyle: true, pointStyle: 'circle' } },
+          tooltip: {
+            backgroundColor: 'rgba(27,60,83,0.95)', padding: 12,
+            callbacks: {
+              label: function(ctx) {
+                var total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                var pct = ((ctx.parsed / total) * 100).toFixed(1);
+                return ctx.label + ': ' + ctx.parsed + 'K (' + pct + '%)';
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Chart 4 — Male vs Female Hep B (2023, grouped bar)
+  var ctxHepGender = document.getElementById('hepGenderChart');
+  if (ctxHepGender) {
+    new Chart(ctxHepGender.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['South-East Asia', 'African', 'European', 'Americas', 'E. Mediterranean'],
+        datasets: [
+          {
+            label: 'Male',
+            data: [720, 310, 280, 170, 162],
+            backgroundColor: 'rgba(14,165,233,0.82)',
+            borderRadius: 6
+          },
+          {
+            label: 'Female',
+            data: [470, 240, 190, 125, 113],
+            backgroundColor: 'rgba(239,68,68,0.75)',
+            borderRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rect', padding: 14, font: { size: 11 } } },
+          tooltip: {
+            backgroundColor: 'rgba(27,60,83,0.95)', padding: 12,
+            callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + 'K' }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { callback: v => v + 'K', font: { size: 11 } },
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            title: { display: true, text: 'Cases (thousands)', font: { size: 11 }, color: '#94a3b8' }
+          },
+          x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 30 } }
         }
       }
     });
