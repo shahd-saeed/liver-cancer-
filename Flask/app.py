@@ -1678,5 +1678,4 @@ if __name__ == '__main__':
     port = int(os.getenv('FLASK_PORT', 5000))
     
     logger.info(f"Starting server on {host}:{port} (debug={debug_mode})")
-    
-    app.run(debug=debug_mode, host=host, port=port)
+   app.run(host="0.0.0.0", port=10000)
